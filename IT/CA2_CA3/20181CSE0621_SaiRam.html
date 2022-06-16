@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration for Fest 2K21</title>
+    <link rel="stylesheet" href="20181CSE0621.css">
+</head>
+
+<body>
+    <h1 style="text-align: center; font-size: 40px;">Welcome To Presidency's Cultural Fest</h1>
+    <h3 style="text-align: center; font-size: 25px;">Let's Register Yourself</h3>
+    ID: <input type="text" id="id" placeholder="20181CSE001.."> <br><br>
+    Password:<input type="password" id="password" name="password"><br><br>
+
+    Name: <input type="text" name="firstName" id="firstName" onkeypress="return /[a-z]/i.test(event.key)" placeholder="Your Name..."><br><br>
+    Mobile Number: <input type="text" name="" id="mobile" onkeypress="return /[0-9]/i.test(event.key)" ><br><br>
+    Branch: <input type="text" id="branch" maxlength="3" placeholder="CSE,MEC..."><br><br>
+    Sem: <input type="number" id="sem" min="1" max="8"><br><br>
+
+
+    <label for="event">Type of event</label>
+    <select id="event" onchange="another()">
+        <option value="Single event">Single event</option>
+        <option value="Group event">Group event</option>
+    </select><br><br>
+
+    <div id="here"></div><br>
+    <div id="here2"></div><br>
+
+    Select an event
+    <select id="option" name="Event">
+        <option> DJ  </option>
+        <option> Dubsmash </option>
+        <option> Painting  </option>
+        <option> Exhibition  </option>
+        <option> MadAds  </option>
+        <option> Coding  </option> <option> Mime  </option> <option> Poster Presentation  </option>
+    </select>
+    <br><br>
+
+
+    <button onclick="go()" id="submit">Register </button>
+    <script>
+        var array = [];
+        var second = [];
+        
+        function another(){
+            event = document.getElementById("event").value
+            
+            if(event == "Group event"){
+                second[0] = "Type of event: Group event"
+                var element = "Strength: <input id='strength' type='number' onchange='forNames()'>"
+                document.getElementById("here").innerHTML = element
+            }
+            else{
+                second[0] = "Type of event: Single event"
+            }
+        }
+        function forNames(){
+            strength = document.getElementById("strength").value
+            var str = ""
+            second[1] = "Strength of the group is " + strength
+            var ans = "Group names are "
+            for(var i=1; i<=strength; ++i){
+                console.log(i)
+                str = str + `Enter the name: <input type='name' id= ${i}><br>`
+            }
+            document.getElementById("here2").innerHTML = str
+            for(var i=1; i<=strength; ++i){
+                ans = ans + document.getElementById(i).value
+            }
+            second[2] = ans
+            console.log(second)
+        }
+        function go() {
+            id = document.getElementById("id").value
+            password = document.getElementById("password").value
+            firstname = document.getElementById("firstName").value
+
+            mobile = document.getElementById("mobile").value
+            branch = document.getElementById("branch").value
+            sem = document.getElementById("sem").value
+            
+            if (id = "20181CSE0540") {
+                array[0] = "ID is: " + id
+                if (password.length >= 6 && isAlphaNumeric(password)){
+                    array[1] = "Password is: " + password
+                    array[2] = "Name is: " + firstname
+                    if(mobile.length == 10){
+                        array[3] = "Mobile number is " + mobile
+                        array[4] = "Branch is: " + branch
+                        array[5] = "Semester is: " + sem
+
+                        
+                        console.log(array)
+                        alert("done")
+                        for(var i=0; i<array.length; ++i){
+                            document.write(array[i] + "<br><br>")
+                        }
+                        for(var i=0; i<second.length; ++i){
+                            document.write(second[i] + "<br><br>")
+                        }
+                    }
+                }
+                else{
+                    alert("Invalid password")
+                }
+            }
+            else {
+                alert("Invalid ID")
+            }
+        }
+
+        function isAlphaNumeric(str) {
+            var code, i, len;
+
+            for (i = 0, len = str.length; i < len; i++) {
+                code = str.charCodeAt(i);
+                if (!(code > 47 && code < 58) && 
+                    !(code > 64 && code < 91) && 
+                    !(code > 96 && code < 123)) { 
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        function isEmail(mailaddr) {
+            return mailaddr.endsWith('@presidencyuniversity.in');
+        }
+
+    </script>
+</body>
+
+</html>

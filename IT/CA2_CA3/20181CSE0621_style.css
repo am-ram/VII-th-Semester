@@ -1,0 +1,23 @@
+*{
+    background-color: rgb(223, 209, 172);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+    outline: none;
+}
+input{
+    border: 3px solid black;
+    outline: none;
+    border-radius: 10px;
+}
+#submit{
+    color: rgb(15, 19, 19);
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}

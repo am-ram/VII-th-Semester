@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Moto's</title>
+</head>
+<link rel="stylesheet" href="20181CSE0621_style.css">
+<script src="script.js"></script>
+<body>
+    <h1 style="color: rgb(44, 109, 231); font-family: Papyrus,Arial,sans-serif; font-size: 50px;"><strong>Mr. Moto's Car Service</strong></h1>
+    <h3>Please find below a bill-payment form.</h3>
+    
+    <!--<form id="form" name="myform" method="post" onsubmit="return validate()">-->
+    <form onsubmit="return check()" name="myform" method="post" >    
+        
+        Customer Name: <input type="text" name="name" onkeypress="return allowOnlyLetters(event,this);" maxlength="8" placeholder="Name...">
+        
+        <p>Please select your Vehicle Type:</p>
+          <input type="checkbox" value="Sedan" name="type" >
+          <label> Sedan</label>
+          <input type="checkbox" value="SUV" >
+          <label>SUV</label>
+          <input type="checkbox" value="MUV" >
+          <label>MUV</label>
+          <input type="checkbox" value="EV">
+          <label>EV</label><br>
+
+        <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars" name="model" required>
+                <option value="XUV" >Mahindra XUV</option>
+                <option value="Thar">Mahindra Thar</option>
+                <option value="Creta">Hyundai Creta</option>
+                <option value="Fortuner">Toyota Fortuner</option>
+                <option value="Dzire">Dzire</option>
+                <option value="City">Honda City</option>
+                <option value="Swift">Swift</option>
+                <option value="Octavia">Skoda Octavia</option>
+                <option value="Ertiga">Maruti Ertiga</option>
+                <option value="Crysta">Toyota Innova Crysta</option>
+            </select>
+         
+        <p>Please select your Vehicle Number:</p> <input placeholder="KA 03 XX YYYY" type="text" name="plate" onkeypress="return validateNumberPlate(event,this);" maxlength="14">
+        
+        <p>Please select the type of service</p>
+        <input type="radio" value="Free" id="service" name="service">
+        <label for="Free">Free</label><br>
+        <input type="radio" value="Paid" id="service" name="service" checked>
+        <label for="Paid">Paid</label><br>
+
+        <p>Enter the total Kilometers Driven: </p>
+        <input type="number" value="kms" name="kms">
+       
+        <p>Date Of Billing</p>    
+        <input type="date"id="date" name="date">
+         
+        <p><input type="submit" value="Pay Bill"  id="submit"> </p>
+      </form>
+</body>
+</html>

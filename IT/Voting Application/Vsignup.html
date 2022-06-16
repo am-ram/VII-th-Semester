@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>voting application signup page</title>
+<style>
+table{background-color:olive;}
+</style>
+<script type="text/javascript">
+function validateForm()
+{
+var name= document.getElementById("uname").value;
+var pwd= document.getElementById("psd").value;
+var cpwd= document.getElementById("cpsd").value;
+var pattern=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8}/;
+var exp=/^(?:[0-9]{5}[A-Z]{3}[0-9]{4})$/;
+if(name=="")
+{
+    alert("Name field is empty");
+    uname.focus();
+    return false;
+}
+if (!exp.test(name))
+{
+    alert("UID is not matching");
+    document.getElementById("uname").value="";
+    uname.focus();
+    return false;
+}
+if (pwd=="")
+{
+    alert("password field is empty");
+    psd.focus();
+    return false;
+}
+if (!pattern.test(pwd))
+{
+    alert("Must contain at least one number and one uppercase and lowercase letter,andat least 8 or more characters");
+    document.getElementById("psd").value="";
+    psd.focus();
+    return false;
+}
+if (cpwd=="")
+{
+    alert("please confirm your password");
+    cpsd.focus();
+    return false;
+}
+if(cpwd!=pwd)
+{
+    alert("not matching , please enter right passowrd")
+    cpsd.focus();
+    return false;
+}
+}
+</script>
+</head>
+<body>
+<form name="myform" action="vsignup.php" onsubmit="return validateForm()">
+<center><table>
+<tr><td>Username</td><td><input type="text" id="uname" placeholder="plsenter valid UID,eg:20171CSExxxx" size="40"></td></tr>
+<tr><td>Password</td><td><input type="password" id="psd"></td></tr>
+<tr><td>Confirm.PWD</td><td><input type="password" id="cpsd"></td></tr>
+<tr><td></td><td align="center" valign="middle"><input type="submit" value="sign up" ></td></tr>
+</table></center>
+</form>
+<body>
+</html>

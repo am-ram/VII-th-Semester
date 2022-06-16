@@ -1,0 +1,13 @@
+*{
+    background-color: rgb(170, 248, 248);
+    font-family: monospace;
+    font-size: x-large;
+    margin: 15px;
+}
+
+#fname,#lname{
+    border-radius: 15px;
+   outline: none;
+   font-size: x-large ;
+   padding: 10px;
+}

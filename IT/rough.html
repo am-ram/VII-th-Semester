@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Form</title>
+    <link rel="stylesheet" href="rough.css">
+</head>
+<script src="rough.js"></script>
+
+<body>
+    <h1>Welcome To Placement Registration!! <br>Enter your details below</h1>
+    <div style='float:right; width: 180px; '>
+        <div style='position: fixed;background-color: cornflowerblue;padding: 10;border: 2px solid black ; border-radius: 25px;padding: 15px;'>
+          Sai Ram. K 20181CSE0621 <br> 7 -CSE- 10 | EndTerm
+        </div></div>
+    <div class="details">
+        <form name="form" action="" method="post " id="form" onsubmit="return validate()">
+            <div class="name">
+                <label for="name">Name:</label>
+                <input id="name" placeholder="Enter your name."><span id="alertname"><strong></strong></span>
+            </div>
+            
+            <div class="id">    
+                <label for="id">ID No. : </label>
+                <input id="id" placeholder="20181XYZ0000"><span id="alertid"><strong></strong></span>
+            </div>
+
+            <div class="mob">    
+                <label for="mob">Mobile : </label>
+                <input id="mob" placeholder="9876543210"><span id="alertmob"><strong></strong></span>
+            </div><br>
+
+            <div class="address">    
+                <label for="address">Address : </label>
+                <input id="address" placeholder="#42, Cross, City, State"><span id="alertaddr"><strong></strong></span>
+            </div><br>
+
+            <div class="branch">    
+                <label for="branch">Branch : </label>
+                <select name="branch" id="branch" class="required">
+                    <option value="" disabled selected>Select your branch</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ISE">ISE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="MEC">MEC</option>
+                    <option value="CIV">CIV</option>
+                  </select>
+                <span id="alertbranch"><strong></strong></span>
+            </div><br>
+
+            <div class="sem">    
+                <label for="sem">Semester : </label>
+                <input type="number" min="0" max="8" id="sem" placeholder="1"><span id="alertsem"><strong></strong></span>
+            </div><br>
+
+            <div class="cgpa">    
+                <label for="cgpa">CGPA : </label>
+                <input type="number" min="0" max="10" step="0.10"id="cgpa" placeholder="8.50 "><span id="alertcgpa"><strong></strong></span>
+            </div><br>
+            
+            
+            <div class="btn" style="padding-left: 5rem;">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+    
+
+</body>
+</html>

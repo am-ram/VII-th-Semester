@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Voting system</title>
+<style>
+body {
+background-color:tomato;
+text-align: center;
+}
+.displaybox
+{
+margin: auto;
+width: 150px;
+background-color: #FaFaFa;
+border: 2px solid #000000;
+padding: 10px;
+font: 1.5em normal verdana, helvetica, arial, sans-serif;
+}
+</style>
+<script type="text/javascript">
+    varajaxRequest=new XMLHttpRequest();
+    function getcandidatelist()
+    {
+    if (!ajaxRequest)
+        { 
+            document.getElementById("showcandidate").innerHTML= "Request error!ajaxobject could not be created";
+            return;
+        }
+    ajaxRequest.onreadystatechange= ajaxResponse; ajaxRequest.open("GET","vvote.php"); ajaxRequest.send();}
+    function ajaxResponse()
+    {
+    if (ajaxRequest.readyState!= 4)
+    {
+        return;
+    }
+    else
+    {
+    if (ajaxRequest.status== 200)
+    { 
+        document.getElementById("showcandidate").innerHTML= ajaxRequest.responseText;
+    } else
+    {
+        alert("Request failed: " + ajaxRequest.statusText);
+    }
+    }
+    }
+</script>
+</head>
+<body>
+<h2>List of candidates</h2>
+<form >
+<input type="button" value="click here to list candidates" onclick="getcandidatelist();"/>
+</form>
+<div id="showcandidate" class="displaybox"></div>
+</body>
+</html>
